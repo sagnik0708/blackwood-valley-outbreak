@@ -1,0 +1,65 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/dialogue_tree.gd" id="2"]
+
+[sub_resource type="Resource" id="t1"]
+script = ExtResource("2")
+id = "chen"
+npc_id = "chen"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Dr. Evelyn Chen", "text": "You came through the spore fog alive. Good. The samples are adapting faster than we can sequence them.", "choices": [{ "text": "What do you need?", "next": "need" }, { "text": "Just checking in.", "next": "end" }] }, { "id": "need", "speaker": "Dr. Evelyn Chen", "text": "Sterile supplies, fungal samples, and fuel. With the Primordial Mycelium Core I can synthesise the Borealis Antiserum.", "set_flag": "knows_inoculation", "choices": [{ "text": "I'll bring you the core.", "next": "promise", "quest": "beat_07", "rep": 0.1 }, { "text": "That sounds dangerous.", "next": "end" }] }, { "id": "promise", "speaker": "Dr. Evelyn Chen", "text": "Then the valley may yet survive this winter. Be careful in the Deep Timber Reserve.", "choices": [] }, { "id": "end", "speaker": "Dr. Evelyn Chen", "text": "Keep your mask sealed out there.", "end": true, "choices": [] }]
+
+[sub_resource type="Resource" id="t2"]
+script = ExtResource("2")
+id = "silas"
+npc_id = "silas"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Sheriff Silas Vance", "text": "State your business. My people are hungry and my officers are one bad shift from mutiny.", "choices": [{ "text": "I can trade for medicine.", "next": "trade" }, { "text": "Just passing through.", "next": "end" }] }, { "id": "trade", "speaker": "Sheriff Silas Vance", "text": "Food for medicine. Bring it to Mara's scavengers and tell her the Watch will honour it. Do not make me regret this.", "set_flag": "trade_deal", "give": "ammo_38", "give_count": 4, "rep": 0.1, "choices": [{ "text": "Done.", "next": "end" }] }, { "id": "end", "speaker": "Sheriff Silas Vance", "text": "Move along. Curfew is at dark.", "end": true, "choices": [] }]
+
+[sub_resource type="Resource" id="t3"]
+script = ExtResource("2")
+id = "mara"
+npc_id = "mara"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Mara \"Rust\" Thorne", "text": "Vance sent you? Figures. The ridge is freezing and we're out of clean water.", "choices": [{ "text": "Vance offers a trade.", "next": "trade", "requires_flag": "trade_deal" }, { "text": "I need supplies.", "next": "barter" }, { "text": "Leaving.", "next": "end" }] }, { "id": "trade", "speaker": "Mara \"Rust\" Thorne", "text": "Food for medicine, and no soldiers on my ridge. Deal. Take this - the generators won't fix themselves.", "set_flag": "trade_deal_mara", "give": "fuel_canister", "give_count": 1, "rep": 0.15, "choices": [{ "text": "Appreciated.", "next": "end" }] }, { "id": "barter", "speaker": "Mara \"Rust\" Thorne", "text": "Scrap first, then talk. Everything has a price on the ridge.", "take": "scrap_metal", "take_count": 1, "give": "bandage", "give_count": 1, "choices": [{ "text": "Fair enough.", "next": "end" }] }, { "id": "end", "speaker": "Mara \"Rust\" Thorne", "text": "Watch the road. The Blighted smell engines.", "end": true, "choices": [] }]
+
+[sub_resource type="Resource" id="t4"]
+script = ExtResource("2")
+id = "caleb"
+npc_id = "caleb"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Caleb Frost", "text": "Stay low. A horde moved through the crossroads an hour ago - I can still hear them.", "choices": [{ "text": "Where should I go?", "next": "advice" }, { "text": "Are you alright?", "next": "calm" }] }, { "id": "advice", "speaker": "Caleb Frost", "text": "The clinic has Doctor Chen. The high school has Vance and his guns. Choose carefully - the valley remembers.", "set_flag": "crossroads_guide", "choices": [] }, { "id": "calm", "speaker": "Caleb Frost", "text": "No. But I can still scout. I'll warn you when a horde is coming.", "give": "bandage", "give_count": 1, "choices": [] }]
+
+[sub_resource type="Resource" id="t5"]
+script = ExtResource("2")
+id = "gwen"
+npc_id = "gwen"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Gwen Ramirez", "text": "The mill still has timber and nails. If you want walls that hold, bring me scrap.", "choices": [{ "text": "Teach me barricade work.", "next": "teach" }, { "text": "Later.", "next": "end" }] }, { "id": "teach", "speaker": "Gwen Ramirez", "text": "Three planks, two nails, one brace. Build where they funnel - chokepoints keep you alive.", "set_flag": "knows_barricades", "give": "nails", "give_count": 4, "choices": [] }, { "id": "end", "speaker": "Gwen Ramirez", "text": "Keep your hammer close.", "end": true, "choices": [] }]
+
+[sub_resource type="Resource" id="t6"]
+script = ExtResource("2")
+id = "thomas"
+npc_id = "thomas"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Father Thomas Bailey", "text": "The chapel is open to anyone who is not yet Blighted. Sit. Breathe.", "choices": [{ "text": "I need rest.", "next": "rest" }, { "text": "Just passing.", "next": "end" }] }, { "id": "rest", "speaker": "Father Thomas Bailey", "text": "Then rest. The cold takes the mind before it takes the body.", "set_flag": "sanctuary_found", "choices": [] }, { "id": "end", "speaker": "Father Thomas Bailey", "text": "Go with care, child.", "end": true, "choices": [] }]
+
+[sub_resource type="Resource" id="t7"]
+script = ExtResource("2")
+id = "jonas"
+npc_id = "jonas"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Jonas Reed", "text": "The relay on Blackwood Peak is still transmitting. The cordon uses encrypted burst traffic - and I still know the keys.", "choices": [{ "text": "What are they planning?", "next": "plan" }, { "text": "Can you shut it down?", "next": "shut" }] }, { "id": "plan", "speaker": "Jonas Reed", "text": "Thermobaric cleansing. Twenty-four hours from the broadcast. Get to the peak and you decide what happens next.", "set_flag": "knows_strike", "give": "military_codes", "give_count": 1, "choices": [] }, { "id": "shut", "speaker": "Jonas Reed", "text": "Blind the bombers and they call it off. Or use the transponder to call the last helicopter out. Your call.", "set_flag": "knows_relay", "choices": [] }]
+
+[sub_resource type="Resource" id="t8"]
+script = ExtResource("2")
+id = "nadia"
+npc_id = "nadia"
+start_node = "start"
+nodes = [{ "id": "start", "speaker": "Nadia O'Connor", "text": "I run messages between the camps. Nobody shoots at a kid - usually.", "choices": [{ "text": "Trade me something useful.", "next": "trade" }, { "text": "Stay safe.", "next": "end" }] }, { "id": "trade", "speaker": "Nadia O'Connor", "text": "Herbs for the infection, cloth for the cold. Take them. The forest gives if you know where to look.", "give": "herbs", "give_count": 2, "take": "clean_water", "take_count": 1, "choices": [{ "text": "Thanks, Nadia.", "next": "end" }] }, { "id": "end", "speaker": "Nadia O'Connor", "text": "Watch the spore clouds at dusk.", "end": true, "choices": [] }]
+
+[resource]
+script = ExtResource("1")
+kind = "dialogue"
+entries = [SubResource("t1"), SubResource("t2"), SubResource("t3"), SubResource("t4"), SubResource("t5"), SubResource("t6"), SubResource("t7"), SubResource("t8")]

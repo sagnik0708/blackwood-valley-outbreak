@@ -1,0 +1,27 @@
+# Godot generated
+.godot/
+*.translation
+
+# Exported builds
+build/
+export/
+exports/
+*.zip
+*.pck
+*.exe
+*.x86_64
+*.wasm
+*.apk
+*.aab
+*.app
+*.dmg
+
+# Temp / editor
+*.tmp
+*.log
+*.bak
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

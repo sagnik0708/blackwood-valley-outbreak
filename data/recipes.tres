@@ -1,0 +1,81 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/recipe_def.gd" id="2"]
+
+[sub_resource type="Resource" id="r1"]
+script = ExtResource("2")
+id = "r_bandage"
+display_name = "Field Bandage"
+station = "any"
+craft_time = 2.0
+ingredients = [{ "item": "cloth_scrap", "count": 2 }]
+results = [{ "item": "bandage", "count": 1 }]
+
+[sub_resource type="Resource" id="r2"]
+script = ExtResource("2")
+id = "r_medkit"
+display_name = "Field Medkit"
+station = "clinic"
+craft_time = 4.0
+ingredients = [{ "item": "bandage", "count": 2 }, { "item": "herbs", "count": 1 }]
+results = [{ "item": "medkit", "count": 1 }]
+
+[sub_resource type="Resource" id="r3"]
+script = ExtResource("2")
+id = "r_ammo"
+display_name = "Hand-Loaded .38 Rounds"
+station = "forge"
+craft_time = 3.0
+ingredients = [{ "item": "scrap_metal", "count": 2 }]
+results = [{ "item": "ammo_38", "count": 6 }]
+
+[sub_resource type="Resource" id="r4"]
+script = ExtResource("2")
+id = "r_fire_axe"
+display_name = "Fire Axe"
+station = "forge"
+craft_time = 5.0
+ingredients = [{ "item": "scrap_metal", "count": 2 }, { "item": "wood_plank", "count": 1 }]
+results = [{ "item": "fire_axe", "count": 1 }]
+
+[sub_resource type="Resource" id="r5"]
+script = ExtResource("2")
+id = "r_nails"
+display_name = "Forged Nails"
+station = "forge"
+craft_time = 2.0
+ingredients = [{ "item": "scrap_metal", "count": 1 }]
+results = [{ "item": "nails", "count": 8 }]
+
+[sub_resource type="Resource" id="r6"]
+script = ExtResource("2")
+id = "r_coat"
+display_name = "Winter Coat"
+station = "any"
+craft_time = 5.0
+ingredients = [{ "item": "cloth_scrap", "count": 4 }]
+results = [{ "item": "winter_coat", "count": 1 }]
+
+[sub_resource type="Resource" id="r7"]
+script = ExtResource("2")
+id = "r_barricade"
+display_name = "Barricade Kit"
+station = "any"
+craft_time = 3.0
+ingredients = [{ "item": "wood_plank", "count": 3 }, { "item": "nails", "count": 2 }]
+results = [{ "item": "barricade_kit", "count": 1 }]
+
+[sub_resource type="Resource" id="r8"]
+script = ExtResource("2")
+id = "r_water"
+display_name = "Purified Water"
+station = "purifier"
+craft_time = 1.5
+ingredients = []
+results = [{ "item": "clean_water", "count": 2 }]
+
+[resource]
+script = ExtResource("1")
+kind = "recipes"
+entries = [SubResource("r1"), SubResource("r2"), SubResource("r3"), SubResource("r4"), SubResource("r5"), SubResource("r6"), SubResource("r7"), SubResource("r8")]

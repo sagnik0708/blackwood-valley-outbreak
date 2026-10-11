@@ -1,0 +1,104 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/npc_def.gd" id="2"]
+
+[sub_resource type="Resource" id="n1"]
+script = ExtResource("2")
+id = "chen"
+display_name = "Dr. Evelyn Chen"
+role = "Lead Researcher"
+faction_id = "bio_research"
+home_zone = "valley_clinic"
+dialogue_id = "chen"
+quest_ids = ["beat_07"]
+needs = { "supplies": 60.0, "fuel": 40.0 }
+color = Color(0.55, 0.8, 0.7, 1)
+
+[sub_resource type="Resource" id="n2"]
+script = ExtResource("2")
+id = "silas"
+display_name = "Sheriff Silas Vance"
+role = "Watch Commander"
+faction_id = "valley_watch"
+home_zone = "high_school"
+dialogue_id = "silas"
+quest_ids = ["beat_06"]
+needs = { "ammunition": 45.0, "rations": 55.0 }
+color = Color(0.45, 0.55, 0.75, 1)
+
+[sub_resource type="Resource" id="n3"]
+script = ExtResource("2")
+id = "mara"
+display_name = "Mara \"Rust\" Thorne"
+role = "Scavenger Queen"
+faction_id = "ridge_scavengers"
+home_zone = "ridge_repair"
+dialogue_id = "mara"
+quest_ids = ["beat_06"]
+needs = { "fuel": 35.0, "scrap": 50.0 }
+color = Color(0.85, 0.55, 0.35, 1)
+
+[sub_resource type="Resource" id="n4"]
+script = ExtResource("2")
+id = "caleb"
+display_name = "Caleb Frost"
+role = "Traumatised Paramedic / Scout"
+faction_id = "bio_research"
+home_zone = "pine_trail"
+dialogue_id = "caleb"
+quest_ids = ["beat_03"]
+is_companion = true
+needs = { "morale": 40.0 }
+color = Color(0.7, 0.6, 0.75, 1)
+
+[sub_resource type="Resource" id="n5"]
+script = ExtResource("2")
+id = "gwen"
+display_name = "Gwen Ramirez"
+role = "Carpenter & Fortification Expert"
+faction_id = "valley_watch"
+home_zone = "timber_mill"
+dialogue_id = "gwen"
+needs = { "materials": 55.0 }
+color = Color(0.75, 0.6, 0.4, 1)
+
+[sub_resource type="Resource" id="n6"]
+script = ExtResource("2")
+id = "thomas"
+display_name = "Father Thomas Bailey"
+role = "Parish Minister & Chaplain"
+faction_id = "valley_watch"
+home_zone = "substation_chapel"
+dialogue_id = "thomas"
+needs = { "morale": 60.0 }
+color = Color(0.85, 0.85, 0.8, 1)
+
+[sub_resource type="Resource" id="n7"]
+script = ExtResource("2")
+id = "jonas"
+display_name = "Jonas Reed"
+role = "Ex-Military Radio Operator"
+faction_id = "valley_watch"
+home_zone = "substation_chapel"
+dialogue_id = "jonas"
+quest_ids = ["beat_08"]
+needs = { "parts": 45.0 }
+color = Color(0.6, 0.7, 0.6, 1)
+
+[sub_resource type="Resource" id="n8"]
+script = ExtResource("2")
+id = "nadia"
+display_name = "Nadia O'Connor"
+role = "Teenage Botanist & Courier"
+faction_id = "ridge_scavengers"
+home_zone = "pine_trail"
+dialogue_id = "nadia"
+is_companion = true
+needs = { "safety": 50.0 }
+color = Color(0.85, 0.65, 0.55, 1)
+
+[resource]
+script = ExtResource("1")
+kind = "npcs"
+entries = [SubResource("n1"), SubResource("n2"), SubResource("n3"), SubResource("n4"), SubResource("n5"), SubResource("n6"), SubResource("n7"), SubResource("n8")]

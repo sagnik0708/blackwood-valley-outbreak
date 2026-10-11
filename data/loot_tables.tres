@@ -1,0 +1,51 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/loot_table.gd" id="2"]
+
+[sub_resource type="Resource" id="l1"]
+script = ExtResource("2")
+id = "outpost_cabin"
+rolls = 3
+entries = [{ "item": "bandage", "min": 1, "max": 2 }, { "item": "canned_beans", "min": 1, "max": 2 }, { "item": "ammo_38", "min": 3, "max": 6 }, { "item": "cloth_scrap", "min": 1, "max": 3 }]
+
+[sub_resource type="Resource" id="l2"]
+script = ExtResource("2")
+id = "general_store"
+rolls = 3
+entries = [{ "item": "canned_beans", "min": 1, "max": 3 }, { "item": "clean_water", "min": 1, "max": 2 }, { "item": "antibiotics", "min": 1, "max": 1 }, { "item": "painkillers", "min": 1, "max": 2 }, { "item": "cloth_scrap", "min": 1, "max": 2 }]
+
+[sub_resource type="Resource" id="l3"]
+script = ExtResource("2")
+id = "clinic_supplies"
+rolls = 3
+entries = [{ "item": "bandage", "min": 1, "max": 3 }, { "item": "medkit", "min": 1, "max": 1 }, { "item": "antibiotics", "min": 1, "max": 2 }, { "item": "surgical_tools", "min": 1, "max": 1 }]
+
+[sub_resource type="Resource" id="l4"]
+script = ExtResource("2")
+id = "military_cache"
+rolls = 3
+entries = [{ "item": "ammo_38", "min": 4, "max": 10 }, { "item": "revolver_38", "min": 1, "max": 1 }, { "item": "military_codes", "min": 1, "max": 1 }, { "item": "canned_beans", "min": 1, "max": 2 }]
+
+[sub_resource type="Resource" id="l5"]
+script = ExtResource("2")
+id = "workshop_scrap"
+rolls = 3
+entries = [{ "item": "scrap_metal", "min": 1, "max": 3 }, { "item": "nails", "min": 2, "max": 6 }, { "item": "spark_plug", "min": 1, "max": 1 }, { "item": "fuel_canister", "min": 1, "max": 1 }, { "item": "wood_plank", "min": 1, "max": 2 }]
+
+[sub_resource type="Resource" id="l6"]
+script = ExtResource("2")
+id = "forest_floor"
+rolls = 2
+entries = [{ "item": "herbs", "min": 1, "max": 3 }, { "item": "wood_plank", "min": 1, "max": 2 }, { "item": "cloth_scrap", "min": 1, "max": 1 }]
+
+[sub_resource type="Resource" id="l7"]
+script = ExtResource("2")
+id = "zombie_remains"
+rolls = 1
+entries = [{ "item": "cloth_scrap", "min": 1, "max": 2 }, { "item": "scrap_metal", "min": 1, "max": 1 }]
+
+[resource]
+script = ExtResource("1")
+kind = "loot"
+entries = [SubResource("l1"), SubResource("l2"), SubResource("l3"), SubResource("l4"), SubResource("l5"), SubResource("l6"), SubResource("l7")]

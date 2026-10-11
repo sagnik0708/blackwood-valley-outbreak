@@ -1,0 +1,60 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/enemy_def.gd" id="2"]
+
+[sub_resource type="Resource" id="e1"]
+script = ExtResource("2")
+id = "shambler"
+display_name = "Blighted Shambler"
+health = 42.0
+speed = 78.0
+damage = 9.0
+attack_range = 44.0
+attack_cooldown = 1.5
+sight_range = 320.0
+hearing_range = 260.0
+scent_range = 140.0
+fov_degrees = 110.0
+infection_on_hit = 3.0
+loot_table = "zombie_remains"
+
+[sub_resource type="Resource" id="e2"]
+script = ExtResource("2")
+id = "sprinter"
+display_name = "Spore Sprinter"
+health = 30.0
+speed = 165.0
+damage = 7.0
+attack_range = 40.0
+attack_cooldown = 1.0
+sight_range = 380.0
+hearing_range = 320.0
+scent_range = 190.0
+fov_degrees = 130.0
+infection_on_hit = 5.0
+loot_table = "zombie_remains"
+body_color = Color(0.45, 0.35, 0.45, 1)
+
+[sub_resource type="Resource" id="e3"]
+script = ExtResource("2")
+id = "hulk"
+display_name = "Spore Hulk"
+health = 140.0
+speed = 92.0
+damage = 18.0
+attack_range = 56.0
+attack_cooldown = 2.0
+sight_range = 300.0
+hearing_range = 300.0
+scent_range = 170.0
+fov_degrees = 100.0
+infection_on_hit = 9.0
+loot_table = "military_cache"
+scale_factor = 1.35
+body_color = Color(0.3, 0.34, 0.24, 1)
+
+[resource]
+script = ExtResource("1")
+kind = "enemies"
+entries = [SubResource("e1"), SubResource("e2"), SubResource("e3")]

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/faction_def.gd" id="2"]
+
+[sub_resource type="Resource" id="f1"]
+script = ExtResource("2")
+id = "valley_watch"
+display_name = "The Valley Watch"
+description = "Hardline martial law, rationing, perimeter defence, zero tolerance for infected or outsiders."
+leader = "silas"
+home_zone = "high_school"
+color = Color(0.35, 0.45, 0.6, 1)
+
+[sub_resource type="Resource" id="f2"]
+script = ExtResource("2")
+id = "bio_research"
+display_name = "The Bio-Research Defectors"
+description = "Scientific salvation. An adaptive spore inoculation may be synthesised from rare mycelial nodes."
+leader = "chen"
+home_zone = "valley_clinic"
+color = Color(0.5, 0.75, 0.6, 1)
+
+[sub_resource type="Resource" id="f3"]
+script = ExtResource("2")
+id = "ridge_scavengers"
+display_name = "The Ridge Scavengers"
+description = "Independent survivalism, base autarky, trading, and defiance of both military and Vance."
+leader = "mara"
+home_zone = "ridge_repair"
+color = Color(0.8, 0.55, 0.3, 1)
+
+[resource]
+script = ExtResource("1")
+kind = "factions"
+entries = [SubResource("f1"), SubResource("f2"), SubResource("f3")]

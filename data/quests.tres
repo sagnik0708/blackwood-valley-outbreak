@@ -1,0 +1,142 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/quest_def.gd" id="2"]
+
+[sub_resource type="Resource" id="q1"]
+script = ExtResource("2")
+id = "beat_01"
+title = "Beat 1: Escape the Ranger Outpost"
+summary = "Treat your wounds, scavenge the emergency kit, and get out of the overrun outpost."
+act = 1
+beat = 1
+objectives = [{ "id": "o1", "type": "search", "target": "outpost_cache", "label": "Scavenge the emergency kit", "count": 1 }, { "id": "o2", "type": "visit", "target": "pine_trail", "label": "Reach the Old Pine Road", "count": 1 }]
+next_quest = "beat_02"
+
+[sub_resource type="Resource" id="q2"]
+script = ExtResource("2")
+id = "beat_02"
+title = "Beat 2: The Old Pine Road"
+summary = "Evade or fight the first Blighted Shamblers on the road out."
+act = 1
+beat = 2
+objectives = [{ "id": "o1", "type": "kill", "target": "shambler", "label": "Survive the Blighted", "count": 2 }, { "id": "o2", "type": "visit", "target": "valley_clinic", "label": "Reach the Valley Clinic", "count": 1, "optional": true }]
+next_quest = "beat_03"
+
+[sub_resource type="Resource" id="q3"]
+script = ExtResource("2")
+id = "beat_03"
+title = "Beat 3: Blackwood Crossroads"
+summary = "Meet scout Caleb Frost and choose your path into the clinic or the high school."
+act = 1
+beat = 3
+objectives = [{ "id": "o1", "type": "talk", "target": "caleb", "label": "Talk to Caleb Frost", "count": 1 }]
+next_quest = "beat_04"
+
+[sub_resource type="Resource" id="q4"]
+script = ExtResource("2")
+id = "beat_04"
+title = "Beat 4: Blackout Crisis"
+summary = "Scavenge a spark plug and fuel to restore the backup generators."
+act = 2
+beat = 4
+objectives = [{ "id": "o1", "type": "item", "target": "spark_plug", "label": "Find a spark plug", "count": 1 }, { "id": "o2", "type": "item", "target": "fuel_canister", "label": "Find fuel", "count": 1 }, { "id": "o3", "type": "flag", "target": "generator_online", "label": "Restore backup power", "count": 1 }]
+next_quest = "beat_05"
+
+[sub_resource type="Resource" id="q5"]
+script = ExtResource("2")
+id = "beat_05"
+title = "Beat 5: Medicine Run"
+summary = "Secure antibiotics and surgical tools from the infested General Store."
+act = 2
+beat = 5
+objectives = [{ "id": "o1", "type": "search", "target": "store_shelves", "label": "Raid the General Store", "count": 1 }, { "id": "o2", "type": "item", "target": "antibiotics", "label": "Secure antibiotics", "count": 1, "optional": true }]
+next_quest = "beat_06"
+
+[sub_resource type="Resource" id="q6"]
+script = ExtResource("2")
+id = "beat_06"
+title = "Beat 6: Faction Envoy"
+summary = "Mediate the food-for-medicine trade between Silas Vance and Mara Thorne - or keep it all."
+act = 2
+beat = 6
+objectives = [{ "id": "o1", "type": "talk", "target": "silas", "label": "Speak with Sheriff Vance", "count": 1 }, { "id": "o2", "type": "talk", "target": "mara", "label": "Speak with Mara Thorne", "count": 1 }]
+next_quest = "beat_07"
+
+[sub_resource type="Resource" id="q7"]
+script = ExtResource("2")
+id = "beat_07"
+title = "Beat 7: Spore Hollows Expedition"
+summary = "Retrieve the Primordial Mycelium Core from the Deep Timber Reserve."
+act = 2
+beat = 7
+objectives = [{ "id": "o1", "type": "visit", "target": "spore_hollows", "label": "Enter the Deep Timber Reserve", "count": 1 }, { "id": "o2", "type": "flag", "target": "core_harvested", "label": "Harvest the Mycelium Core", "count": 1 }]
+next_quest = "beat_08"
+
+[sub_resource type="Resource" id="q8"]
+script = ExtResource("2")
+id = "beat_08"
+title = "Beat 8: Intercept the Military Broadcast"
+summary = "The cordon command orders a thermobaric cleansing strike in 24 hours."
+act = 3
+beat = 8
+objectives = [{ "id": "o1", "type": "flag", "target": "broadcast_heard", "label": "Intercept the cordon broadcast", "count": 1 }]
+next_quest = "beat_09"
+
+[sub_resource type="Resource" id="q9"]
+script = ExtResource("2")
+id = "beat_09"
+title = "Beat 9: Fortify and Assault"
+summary = "Infiltrate the Military Relay Station on Blackwood Peak."
+act = 3
+beat = 9
+objectives = [{ "id": "o1", "type": "visit", "target": "relay_peak", "label": "Reach Blackwood Peak", "count": 1 }, { "id": "o2", "type": "kill", "target": "hulk", "label": "Survive the Spore Hulks", "count": 1, "optional": true }]
+next_quest = "beat_10"
+
+[sub_resource type="Resource" id="q10"]
+script = ExtResource("2")
+id = "beat_10"
+title = "Beat 10: Final Choice"
+summary = "Decide the fate of Blackwood Valley at the peak transponder."
+act = 3
+beat = 10
+objectives = [{ "id": "o1", "type": "flag", "target": "ending_chosen", "label": "Make the final choice", "count": 1 }]
+next_quest = ""
+
+[sub_resource type="Resource" id="q11"]
+script = ExtResource("2")
+id = "ending_extraction"
+title = "Ending A: Cordon Extraction"
+summary = "Transmit the research codes and choose who evacuates on the last helicopter."
+act = 3
+beat = 11
+objectives = []
+is_ending = true
+ending_id = "extraction"
+
+[sub_resource type="Resource" id="q12"]
+script = ExtResource("2")
+id = "ending_inoculation"
+title = "Ending B: The Inoculation"
+summary = "Deliver the core to Dr. Chen and hold the clinic until the Borealis Antiserum is perfected."
+act = 3
+beat = 11
+objectives = []
+is_ending = true
+ending_id = "inoculation"
+
+[sub_resource type="Resource" id="q13"]
+script = ExtResource("2")
+id = "ending_bastion"
+title = "Ending C: The Mountain Bastion"
+summary = "Blind the strike bombers, unite Vance and Thorne, and seal the rockfall pass."
+act = 3
+beat = 11
+objectives = []
+is_ending = true
+ending_id = "bastion"
+
+[resource]
+script = ExtResource("1")
+kind = "quests"
+entries = [SubResource("q1"), SubResource("q2"), SubResource("q3"), SubResource("q4"), SubResource("q5"), SubResource("q6"), SubResource("q7"), SubResource("q8"), SubResource("q9"), SubResource("q10"), SubResource("q11"), SubResource("q12"), SubResource("q13")]

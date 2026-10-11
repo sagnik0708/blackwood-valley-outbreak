@@ -1,0 +1,285 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/data_pack.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2"]
+
+[sub_resource type="Resource" id="i1"]
+script = ExtResource("2")
+id = "hunting_knife"
+display_name = "Hunting Knife"
+type = 0
+stack_size = 1
+weight = 1.0
+icon_color = Color(0.78, 0.78, 0.82, 1)
+damage = 14.0
+attack_range = 58.0
+swing_stamina = 7.0
+swing_time = 0.4
+durability_max = 120.0
+noise = 0.2
+
+[sub_resource type="Resource" id="i2"]
+script = ExtResource("2")
+id = "claw_hammer"
+display_name = "Claw Hammer"
+type = 0
+stack_size = 1
+weight = 1.4
+icon_color = Color(0.72, 0.55, 0.35, 1)
+damage = 12.0
+attack_range = 56.0
+swing_stamina = 9.0
+swing_time = 0.5
+durability_max = 140.0
+noise = 0.35
+
+[sub_resource type="Resource" id="i3"]
+script = ExtResource("2")
+id = "pipe_wrench"
+display_name = "Pipe Wrench"
+type = 0
+stack_size = 1
+weight = 1.8
+icon_color = Color(0.6, 0.62, 0.68, 1)
+damage = 15.0
+attack_range = 58.0
+swing_stamina = 10.0
+swing_time = 0.55
+durability_max = 160.0
+noise = 0.4
+
+[sub_resource type="Resource" id="i4"]
+script = ExtResource("2")
+id = "fire_axe"
+display_name = "Fire Axe"
+type = 0
+stack_size = 1
+weight = 2.4
+icon_color = Color(0.8, 0.35, 0.28, 1)
+damage = 22.0
+attack_range = 64.0
+swing_stamina = 14.0
+swing_time = 0.65
+durability_max = 200.0
+noise = 0.5
+
+[sub_resource type="Resource" id="i5"]
+script = ExtResource("2")
+id = "revolver_38"
+display_name = ".38 Service Revolver"
+type = 1
+stack_size = 1
+weight = 1.2
+icon_color = Color(0.55, 0.58, 0.62, 1)
+damage = 26.0
+attack_range = 420.0
+swing_stamina = 6.0
+swing_time = 0.35
+noise = 0.9
+
+[sub_resource type="Resource" id="i6"]
+script = ExtResource("2")
+id = "ammo_38"
+display_name = ".38 Rounds"
+type = 2
+stack_size = 20
+weight = 0.02
+icon_color = Color(0.85, 0.72, 0.35, 1)
+
+[sub_resource type="Resource" id="i7"]
+script = ExtResource("2")
+id = "bandage"
+display_name = "Bandage"
+type = 3
+stack_size = 6
+weight = 0.1
+icon_color = Color(0.92, 0.92, 0.9, 1)
+heal_health = 6.0
+stop_bleeding = 1.0
+
+[sub_resource type="Resource" id="i8"]
+script = ExtResource("2")
+id = "medkit"
+display_name = "Field Medkit"
+type = 3
+stack_size = 3
+weight = 0.6
+icon_color = Color(0.85, 0.3, 0.28, 1)
+heal_health = 30.0
+stop_bleeding = 1.0
+
+[sub_resource type="Resource" id="i9"]
+script = ExtResource("2")
+id = "painkillers"
+display_name = "Painkillers"
+type = 3
+stack_size = 6
+weight = 0.05
+icon_color = Color(0.85, 0.82, 0.6, 1)
+heal_health = 8.0
+mental = 10.0
+
+[sub_resource type="Resource" id="i10"]
+script = ExtResource("2")
+id = "antibiotics"
+display_name = "Antibiotics"
+type = 3
+stack_size = 5
+weight = 0.1
+icon_color = Color(0.65, 0.85, 0.75, 1)
+heal_health = 6.0
+heal_infection = 35.0
+
+[sub_resource type="Resource" id="i11"]
+script = ExtResource("2")
+id = "herbs"
+display_name = "Wild Herbs"
+type = 3
+stack_size = 8
+weight = 0.05
+icon_color = Color(0.55, 0.8, 0.45, 1)
+heal_health = 4.0
+heal_infection = 8.0
+
+[sub_resource type="Resource" id="i12"]
+script = ExtResource("2")
+id = "canned_beans"
+display_name = "Canned Beans"
+type = 4
+stack_size = 6
+weight = 0.4
+icon_color = Color(0.8, 0.55, 0.3, 1)
+nutrition = 35.0
+
+[sub_resource type="Resource" id="i13"]
+script = ExtResource("2")
+id = "clean_water"
+display_name = "Clean Water"
+type = 5
+stack_size = 6
+weight = 0.5
+icon_color = Color(0.35, 0.65, 0.85, 1)
+hydration = 35.0
+
+[sub_resource type="Resource" id="i14"]
+script = ExtResource("2")
+id = "cloth_scrap"
+display_name = "Cloth Scrap"
+type = 7
+stack_size = 12
+weight = 0.1
+icon_color = Color(0.75, 0.72, 0.65, 1)
+
+[sub_resource type="Resource" id="i15"]
+script = ExtResource("2")
+id = "wood_plank"
+display_name = "Wood Plank"
+type = 7
+stack_size = 12
+weight = 1.2
+icon_color = Color(0.65, 0.48, 0.3, 1)
+
+[sub_resource type="Resource" id="i16"]
+script = ExtResource("2")
+id = "nails"
+display_name = "Nails"
+type = 7
+stack_size = 24
+weight = 0.05
+icon_color = Color(0.6, 0.6, 0.62, 1)
+
+[sub_resource type="Resource" id="i17"]
+script = ExtResource("2")
+id = "scrap_metal"
+display_name = "Scrap Metal"
+type = 7
+stack_size = 12
+weight = 0.8
+icon_color = Color(0.58, 0.6, 0.65, 1)
+
+[sub_resource type="Resource" id="i18"]
+script = ExtResource("2")
+id = "spark_plug"
+display_name = "Spark Plug"
+type = 7
+stack_size = 4
+weight = 0.1
+icon_color = Color(0.85, 0.75, 0.45, 1)
+
+[sub_resource type="Resource" id="i19"]
+script = ExtResource("2")
+id = "fuel_canister"
+display_name = "Fuel Canister"
+type = 7
+stack_size = 3
+weight = 1.6
+icon_color = Color(0.85, 0.6, 0.25, 1)
+
+[sub_resource type="Resource" id="i20"]
+script = ExtResource("2")
+id = "winter_coat"
+display_name = "Winter Coat"
+type = 8
+stack_size = 1
+weight = 1.6
+icon_color = Color(0.45, 0.55, 0.7, 1)
+warmth = 8.0
+
+[sub_resource type="Resource" id="i21"]
+script = ExtResource("2")
+id = "flashlight"
+display_name = "Flashlight"
+type = 9
+stack_size = 1
+weight = 0.4
+icon_color = Color(0.95, 0.9, 0.6, 1)
+
+[sub_resource type="Resource" id="i22"]
+script = ExtResource("2")
+id = "canvas_bag"
+display_name = "Canvas Bag"
+type = 6
+stack_size = 1
+weight = 0.6
+icon_color = Color(0.7, 0.62, 0.45, 1)
+
+[sub_resource type="Resource" id="i23"]
+script = ExtResource("2")
+id = "barricade_kit"
+display_name = "Barricade Kit"
+type = 6
+stack_size = 4
+weight = 1.5
+icon_color = Color(0.6, 0.45, 0.3, 1)
+
+[sub_resource type="Resource" id="i24"]
+script = ExtResource("2")
+id = "surgical_tools"
+display_name = "Surgical Tools"
+type = 10
+stack_size = 1
+weight = 1.0
+icon_color = Color(0.8, 0.85, 0.9, 1)
+
+[sub_resource type="Resource" id="i25"]
+script = ExtResource("2")
+id = "military_codes"
+display_name = "Military Encryption Codes"
+type = 10
+stack_size = 1
+weight = 0.1
+icon_color = Color(0.85, 0.35, 0.3, 1)
+
+[sub_resource type="Resource" id="i26"]
+script = ExtResource("2")
+id = "mycelium_core"
+display_name = "Primordial Mycelium Core"
+type = 10
+stack_size = 1
+weight = 0.8
+icon_color = Color(0.7, 0.9, 0.5, 1)
+
+[resource]
+script = ExtResource("1")
+kind = "items"
+entries = [SubResource("i1"), SubResource("i2"), SubResource("i3"), SubResource("i4"), SubResource("i5"), SubResource("i6"), SubResource("i7"), SubResource("i8"), SubResource("i9"), SubResource("i10"), SubResource("i11"), SubResource("i12"), SubResource("i13"), SubResource("i14"), SubResource("i15"), SubResource("i16"), SubResource("i17"), SubResource("i18"), SubResource("i19"), SubResource("i20"), SubResource("i21"), SubResource("i22"), SubResource("i23"), SubResource("i24"), SubResource("i25"), SubResource("i26")]
