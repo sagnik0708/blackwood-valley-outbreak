@@ -14,7 +14,7 @@ func configure(blocked: Dictionary) -> void:
 	blocker_lookup = blocked
 
 
-func is_visible(cell: Vector2i) -> bool:
+func is_cell_visible(cell: Vector2i) -> bool:
 	return visible_cells.has(cell)
 
 
