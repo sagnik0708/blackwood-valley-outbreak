@@ -1,0 +1,94 @@
+name: Export Web Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: 4.3-stable
+  GODOT_BINARY: Godot_v4.3-stable_linux.x86_64
+  EXPORT_PRESET: Web
+  BUILD_DIR: build/web
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Godot and export templates
+        id: cache-godot
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/godot-bin
+            ~/.local/share/godot/export_templates
+          key: godot-${{ env.GODOT_VERSION }}-linux
+
+      - name: Install Godot and matching export templates
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/godot-bin" "$HOME/.local/share/godot/export_templates/4.3.stable"
+          BASE="https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}"
+          curl -fsSL -o /tmp/godot.zip "${BASE}/Godot_${GODOT_VERSION}_linux.x86_64.zip"
+          unzip -q /tmp/godot.zip -d "$HOME/godot-bin"
+          curl -fsSL -o /tmp/templates.tpz "${BASE}/Godot_${GODOT_VERSION}_export_templates.tpz"
+          unzip -q /tmp/templates.tpz -d /tmp/templates
+          cp -r /tmp/templates/templates/* "$HOME/.local/share/godot/export_templates/4.3.stable/"
+
+      - name: Prepare binary
+        run: |
+          chmod +x "$HOME/godot-bin/${GODOT_BINARY}"
+          echo "$HOME/godot-bin" >> "$GITHUB_PATH"
+
+      - name: Import project (headless)
+        run: |
+          "${GODOT_BINARY}" --headless --path . --import 2>&1 | tee import.log
+          ! grep -E "SCRIPT ERROR|Parse Error|Failed loading resource" import.log
+
+      - name: Smoke test (headless boot)
+        run: |
+          "${GODOT_BINARY}" --headless --path . --quit-after 240 2>&1 | tee boot.log
+          ! grep -E "SCRIPT ERROR|Parse Error" boot.log
+
+      - name: Export Web build
+        run: |
+          mkdir -p "${BUILD_DIR}"
+          "${GODOT_BINARY}" --headless --path . --export-release "${EXPORT_PRESET}" "${BUILD_DIR}/index.html"
+
+      - name: Upload build/web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: blackwood-valley-web
+          path: ${{ env.BUILD_DIR }}
+          if-no-files-found: error
+
+  deploy:
+    needs: export
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: blackwood-valley-web
+          path: build/web
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
