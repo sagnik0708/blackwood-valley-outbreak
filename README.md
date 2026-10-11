@@ -8,7 +8,7 @@ AnimationPlayer-compatible scene layout, CanvasLayer UI, AudioStreamPlayer.
 ## Engine version
 - Godot **4.3-stable** (the same version is installed by CI in `.github/workflows/export.yml`)
 - Renderer: **GL Compatibility** (Web + Android tablet safe)
-- Language: GDScript only — no C#, no .NET, no plugins, no backend
+- Language: GDScript only — no C#, no .NET, no plugins, no backend.
 
 ## Opening the project
 1. Install Godot 4.3-stable from https://godotengine.org/download
