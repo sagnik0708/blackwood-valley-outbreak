@@ -34,9 +34,9 @@ jobs:
           set -euo pipefail
           mkdir -p "$HOME/godot-bin" "$HOME/.local/share/godot/export_templates/4.3.stable"
           BASE="https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}"
-          curl -fsSL -o /tmp/godot.zip "${BASE}/Godot_${GODOT_VERSION}_linux.x86_64.zip"
+          curl -fsSL -o /tmp/godot.zip "${BASE}/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
           unzip -q /tmp/godot.zip -d "$HOME/godot-bin"
-          curl -fsSL -o /tmp/templates.tpz "${BASE}/Godot_${GODOT_VERSION}_export_templates.tpz"
+          curl -fsSL -o /tmp/templates.tpz "${BASE}/Godot_v${GODOT_VERSION}_export_templates.tpz"
           unzip -q /tmp/templates.tpz -d /tmp/templates
           cp -r /tmp/templates/templates/* "$HOME/.local/share/godot/export_templates/4.3.stable/"
 
