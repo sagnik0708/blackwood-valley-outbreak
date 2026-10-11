@@ -190,8 +190,8 @@ func _zone_name(zid: String) -> String:
 
 
 func _change_weather() -> void:
-	var kinds := ["clear", "freezing_rain", "blizzard", "spore_fog"]
-	var w := kinds[randi_range(0, kinds.size() - 1)]
+	var kinds: Array[String] = ["clear", "freezing_rain", "blizzard", "spore_fog"]
+	var w: String = kinds[randi_range(0, kinds.size() - 1)]
 	GameState.weather = w
 	EventBus.weather_changed.emit(w)
 	EventBus.say("Weather turning: %s" % w.replace("_", " "), Color(0.75, 0.85, 1.0))
